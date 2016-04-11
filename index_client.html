@@ -35,7 +35,7 @@
 <section>
 <section id="slide-orgheadline1">
 <h2 id="orgheadline1">Follow Along</h2>
-<div style="font-size:3.4em">
+<div style="font-size:2.5em">
 <a href="http://bit.ly/1N44261">http://bit.ly/1N44261</a>
 </div>
 
@@ -657,12 +657,13 @@ transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/
 transitionSpeed: 'default',
 multiplex: {
     secret: null, // null if client
-    id: '{{ socketId }}', // id, obtained from socket.io server
+    id: 'ea3369e2f315d448', // id, obtained from socket.io server
     url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh/' // Location of socket.io server
 },
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
  { src: 'http://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js', async: true },
  { src: './reveal.js/plugin/multiplex/client.js', async: true }]
 });
