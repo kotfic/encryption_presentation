@@ -35,6 +35,11 @@
 <section>
 <section id="slide-orgheadline1">
 <h2 id="orgheadline1">Follow Along</h2>
+<div style="font-size:3.4em">
+<a href="http://bit.ly/1N44261">http://bit.ly/1N44261</a>
+</div>
+
+
 </section>
 </section>
 <section>
@@ -67,12 +72,30 @@
 <section>
 <section id="slide-orgheadline4">
 <h2 id="orgheadline4">Straw Poll</h2>
-<aside class="notes">
 <ul>
 <li>How many people use Windows/Mac/Linux?</li>
 <li>How many people use a web browser as their primary means of accessing thier email?</li>
-<li>How many people use Outlook,  Apple Mail,  Thunderbird, Claws?</li>
+<li>How many people use Outlook,  Apple Mail,  Thunderbird?</li>
 <li>Is anyone already using encryption?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline5">
+<h2 id="orgheadline5">What are we doing today?</h2>
+<ul>
+<li><b>High-level</b> - why encryption, some basic encryption theory</li>
+<li><b>Mid-level</b> - vocabulary and general outline</li>
+<li><b>Low-level</b> - installing software, encrypting messages</li>
+
+</ul>
+
+<aside class="notes">
+<ul>
+<li>High &amp; Medium levels will be lecture/questions &amp; answer</li>
+<li>Low level will be following tutorials with help from me/dan</li>
 
 </ul>
 
@@ -81,32 +104,38 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline9">
-<h2 id="orgheadline9">Why Encryption?</h2>
-<div class="outline-text-2" id="text-orgheadline9">
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11">Why Encryption?</h2>
+<div class="outline-text-2" id="text-orgheadline11">
 </div></section>
-</section>
-<section>
 <section id="slide-orgheadline6">
-<h3 id="orgheadline6">You don't need encryption if you have nothing to hide</h3>
-<div class="outline-text-3" id="text-orgheadline6">
-</div></section>
-<section id="slide-orgheadline5">
-<h4 id="orgheadline5"><img src="http://i.imgur.com/sCQPhPU.jpg" alt="sCQPhPU.jpg" /></h4>
-
-</section>
-</section>
-<section>
-<section id="slide-orgheadline8">
-<h3 id="orgheadline8">Who are you talking with when you talk on the internet?</h3>
+<h4 id="orgheadline6">You don't need encryption if you have nothing to hide</h4>
 <aside class="notes">
 <ul>
-<li>Traceroute examples</li>
-<li>Who owns those machines?</li>
-<li>What is their data retention policy?</li>
-<li>No one who owns those machines is legally obiligated to protect your privacy
+<li>Common argument against encryption</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-orgheadline7">
+<h4 id="orgheadline7"><img src="http://i.imgur.com/sCQPhPU.jpg" alt="sCQPhPU.jpg" /></h4>
+<aside class="notes">
 <ul>
-<li>Or to put your best interests ahead of their profit margin</li>
+<li>Usually people mean
+<ul>
+<li>+ "I believe no one is going to bother really looking into what i'm doing on the internet"</li>
+
+</ul></li>
+<li>Probably right
+<ul>
+<li>no actual person is going to look at your data</li>
+
+</ul></li>
+<li>Live in an era of machine learning
+<ul>
+<li>algorithms will consume that data and make decisions about your digital life for you</li>
+<li>If that bothers you,  you have the power to say stop that - but no one is going to stop it for you.</li>
 
 </ul></li>
 
@@ -115,8 +144,19 @@
 </aside>
 
 </section>
-<section id="slide-orgheadline7">
-<h4 id="orgheadline7">It's like there is something between us</h4>
+</section>
+<section>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">Who are you talking with when you talk on the internet?</h3>
+<aside class="notes">
+<p>
+Just as a quick example
+</p>
+
+</aside>
+</section>
+<section id="slide-orgheadline8">
+<h4 id="orgheadline8">It's like there is something between us&#x2026;</h4>
 <pre>
 traceroute to facebook.com (31.13.76.68), 30 hops max, 60 byte packets
  1  router.asus.com (192.168.1.1)  0.809 ms  1.145 ms  1.432 ms
@@ -138,29 +178,53 @@ traceroute to facebook.com (31.13.76.68), 30 hops max, 60 byte packets
 17  edge-star-mini-shv-01-sea1.facebook.com (31.13.76.68)  316.663 ms  312.100 ms  312.005 ms
 </pre>
 
+<aside class="notes">
+<ul>
+<li>Traceroute examples</li>
+<li>Who owns those machines?</li>
+<li>What is their data retention policy?</li>
+<li>No one who owns those machines is legally obiligated to protect your privacy
+<ul>
+<li>Or to put your best interests ahead of their profit margin</li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgheadline9">
+<h4 id="orgheadline9">Encrypting mundane data protects people who need encryption most</h4>
+<aside class="notes">
+<ul>
+<li>The more data is encrypted,  the less conspicuous encrypted data becomes</li>
+<li></li>
+
+</ul>
+
+</aside>
+
 </section>
 </section>
 <section>
-<section id="slide-orgheadline22">
-<h2 id="orgheadline22">Some encryption theory</h2>
-<div class="outline-text-2" id="text-orgheadline22">
+<section id="slide-orgheadline17">
+<h2 id="orgheadline17">Some encryption theory</h2>
+<div class="outline-text-2" id="text-orgheadline17">
 </div></section>
-</section>
-<section>
-<section id="slide-orgheadline14">
-<h3 id="orgheadline14">What is encryption?</h3>
-<div class="outline-text-3" id="text-orgheadline14">
-</div></section>
-<section id="slide-orgheadline10">
-<h4 id="orgheadline10">Convert a plain text message to a coded message</h4>
-
-</section>
-<section id="slide-orgheadline11">
-<h4 id="orgheadline11">"Hey everybody"</h4>
-
-</section>
 <section id="slide-orgheadline12">
-<h4 id="orgheadline12"></h4>
+<h4 id="orgheadline12">What is encryption?</h4>
+</section>
+<section id="slide-orgheadline13">
+<h4 id="orgheadline13">Convert a plain text message to a coded message</h4>
+
+</section>
+<section id="slide-orgheadline14">
+<h4 id="orgheadline14">"Hey everybody"</h4>
+
+</section>
+<section id="slide-orgheadline15">
+<h4 id="orgheadline15"></h4>
 <pre>
 -----BEGIN PGP MESSAGE-----
 Version: GnuPG v2
@@ -179,23 +243,23 @@ X28gCDlh61Dlww==
 </pre>
 
 </section>
-<section id="slide-orgheadline13">
-<h4 id="orgheadline13">Ideally, only intended recpient can convert back to the message</h4>
+<section id="slide-orgheadline16">
+<h4 id="orgheadline16">Ideally, only intended recpient can convert back to the message</h4>
 
 </section>
 </section>
 <section>
-<section id="slide-orgheadline17">
-<h3 id="orgheadline17">How do?</h3>
-<div class="outline-text-3" id="text-orgheadline17">
+<section id="slide-orgheadline26">
+<h2 id="orgheadline26">How do?</h2>
+<div class="outline-text-2" id="text-orgheadline26">
 </div></section>
-<section id="slide-orgheadline15">
-<h4 id="orgheadline15">Traditional encryption</h4>
+<section id="slide-orgheadline18">
+<h4 id="orgheadline18">Traditional encryption</h4>
 <aside class="notes">
 <ul>
 <li>How does our recipient know how to decode the message, when nobody else can?</li>
 <li>It must be because they know some extra information that nobody else knows.</li>
-<li>Let's call this the decoding key, because it unlocks the message inside the code.</li>
+<li>Let's call this the "key", because it unlocks the message inside the code.</li>
 
 <li>Where does this key come from?</li>
 <li>Usually prearraged,  'i.e. - try holding the mssage up in a mirror'</li>
@@ -206,13 +270,14 @@ X28gCDlh61Dlww==
 </aside>
 
 </section>
-<section id="slide-orgheadline16">
-<h4 id="orgheadline16">Problems with "traditional" encryption</h4>
+<section id="slide-orgheadline19">
+<h4 id="orgheadline19">Problems with "traditional" encryption</h4>
 <aside class="notes">
 <ul>
 <li>Unless you whisper in someones ear,  a spy might intercept the message that communicates the secret</li>
 <li>Sharing secret keys in parking garages is cool - does not scale</li>
 <li>Not internet ready - might want to communicate securely with someone i've never met</li>
+<li>Particularly problematic if your algorithm/key is open source!</li>
 
 </ul>
 
@@ -220,35 +285,37 @@ X28gCDlh61Dlww==
 
 
 </section>
-</section>
-<section>
 <section id="slide-orgheadline20">
-<h3 id="orgheadline20">Public/Private Key Encryption</h3>
+<h4 id="orgheadline20">Public/Private Key Encryption</h4>
 <aside class="notes">
 <ul>
 <li>public-key cryptography solves this problem really nicely</li>
+<li>Instead of a single piece of information ("key") there are two keys</li>
+<li>One key is public,  one key is private</li>
+<li>Anything encrypted with the public key can ONLY be decrypted with the private key</li>
+<li>Reverse also true - get back to this when we talk about signing</li>
 
 </ul>
 
 </aside>
 
 </section>
-<section id="slide-orgheadline18">
-<h4 id="orgheadline18">Never put your private key on a computer you don't control!</h4>
+<section id="slide-orgheadline21">
+<h4 id="orgheadline21">Give your public key to everyone</h4>
 <aside class="notes">
 <ul>
-<li>Never upload it to another computer</li>
-<li>Never email it or instant message it or</li>
-<li>Never put it on dropbox,  or in any other publically available location!</li>
+<li>Anyone can send you a coded message because everyone can get your public key</li>
+<li>They can be garunteed (assuming your private key is secure) that ONLY you can decrypt the message.</li>
+<li>What happens when you want to reply?</li>
+<li>You find THIER public key and encrypt your reply - garunteeing that only THEY can read the reply.</li>
 
 </ul>
 
 </aside>
 
-
 </section>
-<section id="slide-orgheadline19">
-<h4 id="orgheadline19">Public Key Servers</h4>
+<section id="slide-orgheadline22">
+<h4 id="orgheadline22">Public Key Servers</h4>
 <ul>
 <li><a href="https://pgp.mit.edu/">MIT PGP Public Key Server</a></li>
 <li><a href="https://keys.fedoraproject.org/">Fedora's OpenPGP Key server</a></li>
@@ -263,23 +330,63 @@ X28gCDlh61Dlww==
 
 </aside>
 
-</section>
-</section>
-<section>
-<section id="slide-orgheadline21">
-<h3 id="orgheadline21">Flip side of Encryption - Signing</h3>
 
 </section>
 </section>
 <section>
-<section id="slide-orgheadline27">
-<h2 id="orgheadline27">Some practical encryption terms</h2>
-<div class="outline-text-2" id="text-orgheadline27">
-</div></section>
+<section id="slide-orgheadline24">
+<h3 id="orgheadline24">Flip side of Encryption - Signing</h3>
+<aside class="notes">
+<ul>
+<li>Solves single key issue -  you encrypt with my public key, I encrypt with your public key</li>
+<li>Private key can also encrypt,  and only be decrypted with public key</li>
+<li>Might not seem useful - why encrypt something that everyone can decrypt?</li>
+
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgheadline23">
+<h4 id="orgheadline23">Encrypt with your private key to garuntee you wrote the message</h4>
+<aside class="notes">
+<ul>
+<li>If I encrypt a message and send it out</li>
+<li>assuming I'm the only one who has my private key</li>
+<li>Then you can be garunteed that no one screwed with the message</li>
+<li>and that I wrote it!</li>
+
+</ul>
+
+</aside>
+
+</section>
 </section>
 <section>
-<section id="slide-orgheadline26">
-<h3 id="orgheadline26">Pretty Good Privacy (PGP)</h3>
+<section id="slide-orgheadline25">
+<h3 id="orgheadline25">Never put your private key on a computer you don't control!</h3>
+<aside class="notes">
+<ul>
+<li>All of this relies on some assumptions</li>
+<li>NO ONE ELSE HAS YOUR PRIVATE KEY</li>
+<li>Never upload it to another computer</li>
+<li>Never email it or instant message it or</li>
+<li>Never put it on dropbox,  or in any other publically available location!</li>
+
+</ul>
+
+</aside>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline32">
+<h2 id="orgheadline32">Some practical encryption terms</h2>
+<div class="outline-text-2" id="text-orgheadline32">
+</div></section>
+<section id="slide-orgheadline27">
+<h4 id="orgheadline27">Pretty Good Privacy (PGP)</h4>
 <aside class="notes">
 <ul>
 <li>Phil Zimmermann (1991)</li>
@@ -292,8 +399,8 @@ X28gCDlh61Dlww==
 
 </aside>
 </section>
-<section id="slide-orgheadline23">
-<h4 id="orgheadline23">Pretty Hard to Understand</h4>
+<section id="slide-orgheadline28">
+<h4 id="orgheadline28">Pretty Hard to Understand</h4>
 <aside class="notes">
 <ul>
 <li>Unfortunately somewhat archaic and hard to understand</li>
@@ -304,27 +411,47 @@ X28gCDlh61Dlww==
 </aside>
 
 </section>
-<section id="slide-orgheadline24">
-<h4 id="orgheadline24">Gnu Privacy Guard (GPG)</h4>
+<section id="slide-orgheadline29">
+<h4 id="orgheadline29">Gnu Privacy Guard (GPG)</h4>
 <aside class="notes">
 <ul>
-<li>GPG is a common implementation of PGP</li>
-<li>Unfortunately named leads to sentences like ("GPG" implements "OpenPGP")</li>
-<li>Using GPG to encrypt emails is what we'll be focusing on today.</li>
+<li>GPG is a common, open source implementation of OpenPGP</li>
+<li>Unfortunately named leads to sentences like (use "GPG" to do "PGP")</li>
+<li>GPG is open source and there are Open source implementations for Mac, Windows &amp; Linux</li>
 
 </ul>
 
 </aside>
 
 </section>
-<section id="slide-orgheadline25">
-<h4 id="orgheadline25">GPG Keychain</h4>
+<section id="slide-orgheadline30">
+<h4 id="orgheadline30">Gnu Privacy Assistant (GPA)</h4>
+<aside class="notes">
+<ul>
+<li>Graphical interface to GPG</li>
+
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgheadline31">
+<h4 id="orgheadline31">GPG Keychain</h4>
+<aside class="notes">
+<ul>
+<li>You encrypt with other people's public key</li>
+<li>keeping track of those keys can be a pain</li>
+<li>GPG Keychain is designed to manage other people's</li>
+
+</ul>
+
+</aside>
 
 </section>
 </section>
 <section>
-<section id="slide-orgheadline30">
-<h2 id="orgheadline30">The Problem with Web Mail</h2>
+<section id="slide-orgheadline37">
+<h2 id="orgheadline37">The Problem with Web Mail</h2>
 <aside class="notes">
 <ul>
 <li>The problem with web mail is</li>
@@ -333,17 +460,135 @@ X28gCDlh61Dlww==
 
 </aside>
 </section>
-<section id="slide-orgheadline28">
-<h4 id="orgheadline28">Not in Google's interest</h4>
+<section id="slide-orgheadline33">
+<h4 id="orgheadline33">You are not in control</h4>
+<aside class="notes">
+<ul>
+<li>Your browser is connecting to a remote server</li>
+<li>where all the actual work of moving, marking and sending mail is happening</li>
+<li>Breaks rule No. 1 - never give your private key to ANYONE</li>
+
+</ul>
+
+</aside>
 </section>
-<section id="slide-orgheadline29">
-<h4 id="orgheadline29">You can still use encryption!</h4>
+<section id="slide-orgheadline34">
+<h4 id="orgheadline34">Not in Google's interest</h4>
+<aside class="notes">
+<ul>
+<li>In fact there are ways that this could work technically</li>
+<li>Not really in google's self interest</li>
+<li>They want to read your mail and sell that information to advertisers</li>
+<li>Encryption prevents them from doing that</li>
+
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgheadline35">
+<h4 id="orgheadline35">So I have to use a local email program?</h4>
+<aside class="notes">
+<ul>
+<li>For hassle free integration of encryption - yes</li>
+<li>Can use an open source email client like Thunderbird</li>
+<li>Advantage is sending a signed/encrypted email is as simple as sending a regular email</li>
+<li>Even if you daon't want to do that,  you can still use encryption</li>
+
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgheadline36">
+<h4 id="orgheadline36">You can still use encryption!</h4>
+<aside class="notes">
+<ul>
+<li>You can still use encryption</li>
+<li>you just have to encrypt your email on your local computer</li>
+<li>Copy and paste the encrypted message into the text box</li>
+<li>Send your email</li>
+<li>In fact this is all plugins to Thunderbird/Apple Mail etc are doing</li>
+
+</ul>
+
+</aside>
+
 
 </section>
 </section>
 <section>
-<section id="slide-orgheadline31">
-<h2 id="orgheadline31">How are we going to do this?</h2>
+<section id="slide-orgheadline46">
+<h2 id="orgheadline46">Practical steps (Mid Level)</h2>
+<aside class="notes">
+<p>
+
+</p>
+
+</aside>
+</section>
+<section id="slide-orgheadline38">
+<h4 id="orgheadline38">1. Download GPG software for your Operating system</h4>
+<ul>
+<li>Mac OSX - <a href="https://gpgtools.org/">GPGTools</a></li>
+<li>Windows - <a href="https://www.gpg4win.org/">GPG4Win</a></li>
+<li>Linux - <a href="https://www.gnupg.org/download/">From the GPG website</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline39">
+<h4 id="orgheadline39">2. Create a public and a private key</h4>
+<ul>
+<li>Going to be asked for personal information</li>
+<li>Use you're <b>real</b> name and email address</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline40">
+<h4 id="orgheadline40">3. Upload your public key to a public key server</h4>
+<ul>
+<li><a href="https://pgp.mit.edu/">MIT PGP Public Key Server</a></li>
+<li><a href="https://keys.fedoraproject.org/">Fedora's OpenPGP Key server</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline41">
+<h4 id="orgheadline41">4. Ask a neighbor for their public key</h4>
+<ul>
+<li>Look them up on the public key server</li>
+<li>Email them your public key</li>
+<li>Use a flashdrive</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline42">
+<h4 id="orgheadline42">5. Import their public key into your Keychain</h4>
+
+</section>
+<section id="slide-orgheadline43">
+<h4 id="orgheadline43">6. Encrypt a message with their public key</h4>
+
+</section>
+<section id="slide-orgheadline44">
+<h4 id="orgheadline44">7. Send them that message</h4>
+<ul>
+<li>When you recieve a message from your neighbor,  use your key to decrypt it.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline45">
+<h4 id="orgheadline45">8. Congratulations!</h4>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline47">
+<h2 id="orgheadline47">How are we going to do this (Low-Level)?</h2>
 <aside class="notes">
 <ul>
 <li>Too many machines,  too many environments and setups</li>
@@ -358,19 +603,32 @@ X28gCDlh61Dlww==
 </section>
 </section>
 <section>
-<section id="slide-orgheadline32">
-<h2 id="orgheadline32">Questions?</h2>
+<section id="slide-orgheadline48">
+<h2 id="orgheadline48">Questions?</h2>
+
 </section>
 </section>
 <section>
-<section id="slide-orgheadline33">
-<h2 id="orgheadline33">Email Self-Defense</h2>
+<section id="slide-orgheadline49">
+<h2 id="orgheadline49">Email Self-Defense</h2>
 <ul>
-<li><a href="https://emailselfdefense.fsf.org/en/">Linux, Mac, Windows with Thunderbird and Enigmail plugin</a></li>
+<li><a href="https://emailselfdefense.fsf.org/en/">Linux, Mac, Windows with Thunderbird and Enigmail</a></li>
 <li><a href="https://gpgtools.tenderapp.com/kb/how-to/first-steps-where-do-i-start-where-do-i-begin-setup-gpgtools-create-a-new-key-your-first-encrypted-mail">Mac OSX, GPGTools, and Apple Mail</a></li>
 <li><a href="https://gpgtools.tenderapp.com/kb/gpgservices-faq/how-do-i-activate-gpgservices">Encrypt Files on Mac OSX with GPGTools</a></li>
 <li><a href="https://www.gpg4win.org/doc/en/gpg4win-compendium_24.html">Encrypt Files on Windows with GPG4Win</a></li>
 <li><a href="http://www.albany.edu/ualbany_mail.pdf">Configure UAlbany Mail with third party clients</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline50">
+<h2 id="orgheadline50">Some other things to consider</h2>
+<ul>
+<li>Using Off the Record (OTR) for Chat</li>
+<li>Using The Onion Router (TOR) for Web browsing</li>
+<li>Encrypting your hard drive</li>
 
 </ul>
 </section>
@@ -399,7 +657,7 @@ transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/
 transitionSpeed: 'default',
 multiplex: {
     secret: null, // null if client
-    id: '7660cf145246fceb', // id, obtained from socket.io server
+    id: '{{ socketId }}', // id, obtained from socket.io server
     url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh/' // Location of socket.io server
 },
 

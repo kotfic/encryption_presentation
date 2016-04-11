@@ -12,6 +12,13 @@
 #+REVEAL_PLUGINS: (multiplex)
 
 * Follow Along
+#+BEGIN_HTML
+<div style="font-size:3.4em">
+<a href="http://bit.ly/1N44261">http://bit.ly/1N44261</a>
+</div>
+#+END_HTML
+
+
 * Introductions
 #+BEGIN_NOTES
 + Introduce yourself
@@ -25,27 +32,42 @@
 + [[https://ssd.eff.org/en][EFF Surveillance Self-Defense]]
 
 * Straw Poll
-#+BEGIN_NOTES
 + How many people use Windows/Mac/Linux?
 + How many people use a web browser as their primary means of accessing thier email?
-+ How many people use Outlook,  Apple Mail,  Thunderbird, Claws? 
++ How many people use Outlook,  Apple Mail,  Thunderbird? 
 + Is anyone already using encryption?
+
+* What are we doing today?
++ *High-level* - why encryption, some basic encryption theory
++ *Mid-level* - vocabulary and general outline
++ *Low-level* - installing software, encrypting messages
+
+#+BEGIN_NOTES
++ High & Medium levels will be lecture/questions & answer
++ Low level will be following tutorials with help from me/dan
 #+END_NOTES
 
 * Why Encryption? 
-** You don't need encryption if you have nothing to hide
+*** You don't need encryption if you have nothing to hide
+#+BEGIN_NOTES
++ Common argument against encryption
+#+END_NOTES
 *** http://i.imgur.com/sCQPhPU.jpg
+#+BEGIN_NOTES
++ Usually people mean
+  + + "I believe no one is going to bother really looking into what i'm doing on the internet"
++ Probably right 
+  + no actual person is going to look at your data
++ Live in an era of machine learning
+  + algorithms will consume that data and make decisions about your digital life for you
+  + If that bothers you,  you have the power to say stop that - but no one is going to stop it for you.
+#+END_NOTES
 
 ** Who are you talking with when you talk on the internet?
 #+BEGIN_NOTES
-+ Traceroute examples
-+ Who owns those machines?
-+ What is their data retention policy?
-+ No one who owns those machines is legally obiligated to protect your privacy
-  + Or to put your best interests ahead of their profit margin
+Just as a quick example
 #+END_NOTES
-
-*** It's like there is something between us
+*** It's like there is something between us...
 #+BEGIN_HTML
 <pre>
 traceroute to facebook.com (31.13.76.68), 30 hops max, 60 byte packets
@@ -69,8 +91,22 @@ traceroute to facebook.com (31.13.76.68), 30 hops max, 60 byte packets
 </pre>
 #+END_HTML
 
+#+BEGIN_NOTES
++ Traceroute examples
++ Who owns those machines?
++ What is their data retention policy?
++ No one who owns those machines is legally obiligated to protect your privacy
+  + Or to put your best interests ahead of their profit margin
+#+END_NOTES
+
+*** Encrypting mundane data protects people who need encryption most
+#+BEGIN_NOTES
++ The more data is encrypted,  the less conspicuous encrypted data becomes
++ 
+#+END_NOTES
+
 * Some encryption theory
-** What is encryption?
+*** What is encryption?
 *** Convert a plain text message to a coded message
 
 *** "Hey everybody"
@@ -97,12 +133,12 @@ X28gCDlh61Dlww==
 
 *** Ideally, only intended recpient can convert back to the message
 
-** How do?
+* How do?
 *** Traditional encryption
 #+BEGIN_NOTES
 + How does our recipient know how to decode the message, when nobody else can? 
 + It must be because they know some extra information that nobody else knows. 
-+ Let's call this the decoding key, because it unlocks the message inside the code.
++ Let's call this the "key", because it unlocks the message inside the code.
 
 + Where does this key come from?  
 + Usually prearraged,  'i.e. - try holding the mssage up in a mirror'
@@ -114,21 +150,26 @@ X28gCDlh61Dlww==
 + Unless you whisper in someones ear,  a spy might intercept the message that communicates the secret
 + Sharing secret keys in parking garages is cool - does not scale
 + Not internet ready - might want to communicate securely with someone i've never met
++ Particularly problematic if your algorithm/key is open source!
 #+END_NOTES
 
 
-** Public/Private Key Encryption
+*** Public/Private Key Encryption
 #+BEGIN_NOTES
 + public-key cryptography solves this problem really nicely 
++ Instead of a single piece of information ("key") there are two keys
++ One key is public,  one key is private
++ Anything encrypted with the public key can ONLY be decrypted with the private key
++ Reverse also true - get back to this when we talk about signing
 #+END_NOTES
 
-*** Never put your private key on a computer you don't control!
+*** Give your public key to everyone
 #+BEGIN_NOTES
-+ Never upload it to another computer
-+ Never email it or instant message it or
-+ Never put it on dropbox,  or in any other publically available location!
++ Anyone can send you a coded message because everyone can get your public key
++ They can be garunteed (assuming your private key is secure) that ONLY you can decrypt the message.
++ What happens when you want to reply? 
++ You find THIER public key and encrypt your reply - garunteeing that only THEY can read the reply.
 #+END_NOTES
-
 
 *** Public Key Servers
 + [[https://pgp.mit.edu/][MIT PGP Public Key Server]]
@@ -138,10 +179,34 @@ X28gCDlh61Dlww==
 + SKS is a mesh network, submitting to one means all keyservers will get the public key
 #+END_NOTES
 
+
 ** Flip side of Encryption - Signing
+#+BEGIN_NOTES
++ Solves single key issue -  you encrypt with my public key, I encrypt with your public key
++ Private key can also encrypt,  and only be decrypted with public key 
++ Might not seem useful - why encrypt something that everyone can decrypt?
+#+END_NOTES
+
+*** Encrypt with your private key to garuntee you wrote the message
+#+BEGIN_NOTES
++ If I encrypt a message and send it out 
++ assuming I'm the only one who has my private key
++ Then you can be garunteed that no one screwed with the message 
++ and that I wrote it!
+#+END_NOTES
+
+** Never put your private key on a computer you don't control!
+#+BEGIN_NOTES
++ All of this relies on some assumptions 
++ NO ONE ELSE HAS YOUR PRIVATE KEY
++ Never upload it to another computer
++ Never email it or instant message it or
++ Never put it on dropbox,  or in any other publically available location!
+#+END_NOTES
+
 
 * Some practical encryption terms
-** Pretty Good Privacy (PGP)
+*** Pretty Good Privacy (PGP)
 #+BEGIN_NOTES
 + Phil Zimmermann (1991) 
 + Actually a joke - Ralph's Pretty Good Grocery (Prarie home companion) - in reality it is VERY GOOD privacy
@@ -157,21 +222,91 @@ X28gCDlh61Dlww==
 
 *** Gnu Privacy Guard (GPG)
 #+BEGIN_NOTES
-+ GPG is a common implementation of PGP
-+ Unfortunately named leads to sentences like ("GPG" implements "OpenPGP")
-+ Using GPG to encrypt emails is what we'll be focusing on today.
++ GPG is a common, open source implementation of OpenPGP
++ Unfortunately named leads to sentences like (use "GPG" to do "PGP")
++ GPG is open source and there are Open source implementations for Mac, Windows & Linux
+#+END_NOTES
+
+*** Gnu Privacy Assistant (GPA)
+#+BEGIN_NOTES
++ Graphical interface to GPG
 #+END_NOTES
 
 *** GPG Keychain
+#+BEGIN_NOTES
++ You encrypt with other people's public key 
++ keeping track of those keys can be a pain
++ GPG Keychain is designed to manage other people's 
+#+END_NOTES
 
 * The Problem with Web Mail
 #+BEGIN_NOTES
 + The problem with web mail is 
 #+END_NOTES
+*** You are not in control
+#+BEGIN_NOTES
++ Your browser is connecting to a remote server 
++ where all the actual work of moving, marking and sending mail is happening
++ Breaks rule No. 1 - never give your private key to ANYONE
+#+END_NOTES
 *** Not in Google's interest
-*** You can still use encryption!
+#+BEGIN_NOTES
++ In fact there are ways that this could work technically
++ Not really in google's self interest 
++ They want to read your mail and sell that information to advertisers
++ Encryption prevents them from doing that
+#+END_NOTES
 
-* How are we going to do this?
+*** So I have to use a local email program?
+#+BEGIN_NOTES 
++ For hassle free integration of encryption - yes
++ Can use an open source email client like Thunderbird
++ Advantage is sending a signed/encrypted email is as simple as sending a regular email
++ Even if you daon't want to do that,  you can still use encryption
+#+END_NOTES
+
+*** You can still use encryption!
+#+BEGIN_NOTES
++ You can still use encryption 
++ you just have to encrypt your email on your local computer
++ Copy and paste the encrypted message into the text box
++ Send your email
++ In fact this is all plugins to Thunderbird/Apple Mail etc are doing
+#+END_NOTES
+
+
+* Practical steps (Mid Level)
+#+BEGIN_NOTES
+
+#+END_NOTES
+*** 1. Download GPG software for your Operating system
++ Mac OSX - [[https://gpgtools.org/][GPGTools]]
++ Windows - [[https://www.gpg4win.org/][GPG4Win]]
++ Linux - [[https://www.gnupg.org/download/][From the GPG website]]
+
+*** 2. Create a public and a private key
++ Going to be asked for personal information 
++ Use you're *real* name and email address
+
+*** 3. Upload your public key to a public key server
++ [[https://pgp.mit.edu/][MIT PGP Public Key Server]]
++ [[https://keys.fedoraproject.org/][Fedora's OpenPGP Key server]]
+
+*** 4. Ask a neighbor for their public key
++ Look them up on the public key server
++ Email them your public key
++ Use a flashdrive
+
+*** 5. Import their public key into your Keychain
+
+*** 6. Encrypt a message with their public key
+
+*** 7. Send them that message
++ When you recieve a message from your neighbor,  use your key to decrypt it.
+
+*** 8. Congratulations!
+
+* How are we going to do this (Low-Level)?
 #+BEGIN_NOTES
 + Too many machines,  too many environments and setups
 + Going to take questions on theory/background 
@@ -180,11 +315,16 @@ X28gCDlh61Dlww==
 #+END_NOTES
 
 * Questions?
+
 * Email Self-Defense
-+ [[https://emailselfdefense.fsf.org/en/][Linux, Mac, Windows with Thunderbird and Enigmail plugin]]
++ [[https://emailselfdefense.fsf.org/en/][Linux, Mac, Windows with Thunderbird and Enigmail]]
 + [[https://gpgtools.tenderapp.com/kb/how-to/first-steps-where-do-i-start-where-do-i-begin-setup-gpgtools-create-a-new-key-your-first-encrypted-mail][Mac OSX, GPGTools, and Apple Mail]]
 + [[https://gpgtools.tenderapp.com/kb/gpgservices-faq/how-do-i-activate-gpgservices][Encrypt Files on Mac OSX with GPGTools]]
 + [[https://www.gpg4win.org/doc/en/gpg4win-compendium_24.html][Encrypt Files on Windows with GPG4Win]]
 + [[http://www.albany.edu/ualbany_mail.pdf][Configure UAlbany Mail with third party clients]]
 
+* Some other things to consider
++ Using Off the Record (OTR) for Chat
++ Using The Onion Router (TOR) for Web browsing
++ Encrypting your hard drive
 
